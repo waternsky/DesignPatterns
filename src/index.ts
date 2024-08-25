@@ -1,5 +1,6 @@
 import { ConfigurationManager } from "./configManager"
 import { DatabaseConnection } from "./dbConnection"
+import { EventBus } from "./eventBus"
 import { Logger } from "./logger"
 
 
@@ -23,3 +24,13 @@ logger.log("DB Instance check: "+(con1 === con2))
 
 con1.connect()
 con2.connect()
+
+// Event bus
+const eventBus1 = EventBus.getInstance()
+eventBus1.publish("userLoggedIn", { username: "Kushal" })
+
+const eventBus2 = EventBus.getInstance()
+eventBus2.subscribe("userLoggedIn", (data) => {
+    console.log(`User ${data.username} logged in succesfully`)
+})
+logger.log("EventBus Instance check: "+(eventBus1 === eventBus2))
