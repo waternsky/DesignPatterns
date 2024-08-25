@@ -1,4 +1,5 @@
 import { ConfigurationManager } from "./configManager"
+import { Counter } from "./counter"
 import { DatabaseConnection } from "./dbConnection"
 import { EventBus } from "./eventBus"
 import { Logger } from "./logger"
@@ -34,3 +35,11 @@ eventBus2.subscribe("userLoggedIn", (data) => {
     console.log(`User ${data.username} logged in succesfully`)
 })
 logger.log("EventBus Instance check: "+(eventBus1 === eventBus2))
+
+// Counter
+const counter1 = Counter.getInstance()
+counter1.increment()
+counter1.increment()
+const counter2 = Counter.getInstance()
+logger.log("Counter: "+counter2.getValue())
+logger.log("Counter Instance check: "+(counter1 === counter2))
