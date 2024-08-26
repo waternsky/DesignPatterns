@@ -1,3 +1,4 @@
+import { AppState } from "./appState"
 import { ConfigurationManager } from "./configManager"
 import { Counter } from "./counter"
 import { DatabaseConnection } from "./dbConnection"
@@ -43,3 +44,14 @@ counter1.increment()
 const counter2 = Counter.getInstance()
 logger.log("Counter: "+counter2.getValue())
 logger.log("Counter Instance check: "+(counter1 === counter2))
+// Still runs but use ts rules, so that it doesn't compile to begin with
+// const counter3 = new Counter();
+// counter3.increment()
+// logger.log("Counter: "+counter3.getValue())
+
+// App state
+const appState1 = AppState.getInstance()
+appState1.setState("isLoggedIn", true)
+const appState2 = AppState.getInstance()
+logger.log("Appstate: "+appState2.getState("isLoggedIn"))
+logger.log("AppState Instance check: "+(appState2 === appState1))
