@@ -1,4 +1,5 @@
 import { ComputerBuilder } from "./computerBuilder";
+import { HouseBuilder } from "./houseBuilder";
 import { PizzaBuilder, PizzaBuilder2 } from "./pizzaBuilder";
 
 const pizza = new PizzaBuilder()
@@ -35,3 +36,23 @@ const gamingPC = new ComputerBuilder()
     .setPowerSupply("750W")
     .build()
 gamingPC.specs()
+
+const villa = new HouseBuilder()
+    .setRooms(5)
+    .setGarage(true)
+    .setGarden(true)
+    .setSwimmingPool(true)
+    .setFence(true)
+    .build()
+
+villa.showDetails()
+
+const cottage = new HouseBuilder()
+    .setRooms(2)
+    .setFence(false)
+    .setGarden(true)
+    .setGarage(false)
+    .setSwimmingPool(false)
+    .build()
+
+cottage.showDetails()
