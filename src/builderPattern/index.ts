@@ -1,6 +1,7 @@
 import { ComputerBuilder } from "./computerBuilder";
 import { HouseBuilder } from "./houseBuilder";
 import { PizzaBuilder, PizzaBuilder2 } from "./pizzaBuilder";
+import { VacationPackageBuilder } from "./vacationPackageBuilder";
 
 const pizza = new PizzaBuilder()
     .setSize("Large")
@@ -56,3 +57,14 @@ const cottage = new HouseBuilder()
     .build()
 
 cottage.showDetails()
+
+
+const allInclusive = new VacationPackageBuilder()
+    .setHotel("5-start resort")
+    .setDestination("Hawaii")
+    .setMeals("All inclusive")
+    .setTransportation("Flight")
+    .setActivities(["snorkeling", "hiking"])
+    .build()
+
+allInclusive.showPackage()
