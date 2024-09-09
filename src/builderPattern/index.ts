@@ -1,6 +1,8 @@
 import { ComputerBuilder } from "./computerBuilder";
 import { HouseBuilder } from "./houseBuilder";
 import { PizzaBuilder, PizzaBuilder2 } from "./pizzaBuilder";
+import { RobotBuilder } from "./robotBuilder";
+import { UserProfileBuilder } from "./userProfileBuilder";
 import { VacationPackageBuilder } from "./vacationPackageBuilder";
 
 const pizza = new PizzaBuilder()
@@ -68,3 +70,23 @@ const allInclusive = new VacationPackageBuilder()
     .build()
 
 allInclusive.showPackage()
+
+
+const robot = new RobotBuilder()
+    .setArms("Hydrallic arms")
+    .setLegs("Heavy duty-legs")
+    .setTools(["Weilding tool", "Drill"])
+    .setSensors(["Proximity sensors", "Temperature sensors"])
+    .build()
+
+robot.showRobot()
+
+const detailedProfile = new UserProfileBuilder()
+    .setUsername("janedoe")
+    .setEmail("janedoe@example.com")
+    .setPhone("123-456-7890")
+    .setAddress("123 Main St, Springfield")
+    .setProfilePicture("janedoe.jpg")
+    .build();
+
+detailedProfile.showProfile()
